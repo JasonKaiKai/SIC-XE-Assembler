@@ -32,13 +32,29 @@ void extract(string a,string word[],int& count)
     for(i=0;i<5;++i) word[i]="";
     count=0;
     i=0;
-    while(isWhiteSpace(a[i])&&i<a.length()) {++i;continue;}
-    if(i==a.length()||a[i]=='.')   return;
+    
+    while(isWhiteSpace(a[i])&&i<a.length()) 
+    {
+      ++i;
+      continue;
+    }
+    
+    if(i==a.length()||a[i]=='.')   
+      return;
+    
     for(;i<a.length();)
     {
-        while(isWhiteSpace(a[i])&&i<a.length()) {++i;continue;}
-        if(i==a.length()) break;
-        for(;!isWhiteSpace(a[i])&&i<a.length();++i) word[count]+=a[i];
+        while(isWhiteSpace(a[i])&&i<a.length()) 
+        {
+          ++i;
+          continue;
+        }
+        if(i==a.length()) 
+          break;
+        
+        for(;!isWhiteSpace(a[i])&&i<a.length();++i) 
+          word[count]+=a[i];
+        
         ++count;
     }
 }
